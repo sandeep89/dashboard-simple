@@ -64,8 +64,8 @@ define(['../app', "text!templates/dashboard.hbs", 'd3', 'services/dashboardServi
                     .attr('height', legendRectSize)
                     .style('fill', color)
                     .style('stroke', color)
-                    .on('click', function (d) {
-                        self.drillReport(d.data.label);
+                    .on('click', function (label) {
+                        self.drillReport(label);
                     });
 
                 legend.append('text')
@@ -74,8 +74,8 @@ define(['../app', "text!templates/dashboard.hbs", 'd3', 'services/dashboardServi
                     .text(function (d) {
                         return d;
                     })
-                    .on('click', function (d) {
-                        self.drillReport(d.data.label);
+                    .on('click', function (label) {
+                        self.drillReport(label);
                     });
             })
         }
