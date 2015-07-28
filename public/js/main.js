@@ -10,7 +10,9 @@ require.config({
         handlebars: 'libs/handlebars',
         underscore: 'libs/underscore.min',
         text: 'libs/text-loader-plugin',
-        ember_template: 'libs/ember-template-compiler'
+        ember_template: 'libs/ember-template-compiler',
+        d3:'libs/d3.min',
+        Q:'libs/q'
     },
 
     shim: {
@@ -23,6 +25,9 @@ require.config({
         },
         handlebars: {
             exports: 'handlebars'
+        },
+        d3:{
+            exports:'d3'
         }
     }
 });
