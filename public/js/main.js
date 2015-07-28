@@ -34,7 +34,13 @@ require.config({
 
 require([
     'app',
+
     'controllers/dashboardController',
+    'controllers/drilledController',
+
     'routes/dashboardRoute',
-    'views/dashboardView'
+    'routes/drilledRoute',
+
+    'views/dashboardView',
+    'views/drilledView'
 ]);

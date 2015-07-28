@@ -5,8 +5,11 @@
 define(['../app', "text!templates/dashboard.hbs", 'd3', 'services/dashboardServices'], function(app, dashboardTemplate, d3, dashboardServices){
     app.DashboardView = Ember.View.extend({
         template: Ember.Handlebars.compile(dashboardTemplate),
+        drillReport: function(element){
+        },
         didInsertElement:function(){
             dashboardServices.fetchSummaryReport().then(function(dataset){
+                var self = this;
                 var width = 360;
                 var height = 360;
                 var radius = Math.min(width, height) / 2;
@@ -30,7 +33,8 @@ define(['../app', "text!templates/dashboard.hbs", 'd3', 'services/dashboardServi
                     .attr('d', arc)
                     .attr('fill', function(d, i) {
                         return color(d.data.label);
-                    });
+                    })
+                    .on("click", self.drillReport(d));
             })
         }
     })

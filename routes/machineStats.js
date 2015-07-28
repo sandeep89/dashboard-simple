@@ -10,7 +10,6 @@ router.get('/', function(req, res, next) {
         { label: 'Dijkstra', count: 40 }
     ];
     res.send(dataset);
-  //res.send('respond with a resource');
 });
 
 router.get('/drilled', function(req, res,next){
