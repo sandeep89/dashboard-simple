@@ -5,7 +5,12 @@ define(["services/rest-client"], function(rest_client){
     var fetchSummaryReport = function(){
         return rest_client.get("/machineStats");
     }
+
+    var fetchDrilledReport = function (lable) {
+        return rest_client.get("/machineStats/drilled?label=" + lable);
+    }
     return {
-        fetchSummaryReport: fetchSummaryReport
+        fetchSummaryReport: fetchSummaryReport,
+        fetchDrilledReport:fetchDrilledReport
     }
 })

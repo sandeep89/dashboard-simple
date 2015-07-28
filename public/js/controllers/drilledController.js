@@ -3,6 +3,6 @@
  */
 define(['app'],function(app){
     app.DrilledController = Ember.ObjectController.extend({
-
+        label:''
     })
 })
